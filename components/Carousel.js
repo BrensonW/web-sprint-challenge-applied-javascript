@@ -36,6 +36,8 @@ function constructor() {
   };
 
   let imageIndex = 0;
+
+  
   //objects
   const carousel = document.createElement("div");
   const leftButton = document.createElement("div");
@@ -46,17 +48,22 @@ function constructor() {
 
   //classes
   carousel.classList.add("carousel");
-  // leftButton.textContent = "left";
-  // rightButton.textContent = "right";
+   leftButton.textContent = "<";
+   rightButton.textContent = ">";
 
-  caroImg.src = imageObj[imageIndex];
+
+
+caroImg.src = imageObj[imageIndex];
+
   function increment() {
     console.log("+");
+    
     if (imageIndex === 3) {
       imageIndex = 0;
     } else {
       imageIndex = imageIndex + 1;
     }
+  
     caroImg.src = imageObj[imageIndex];
   }
 
@@ -86,5 +93,4 @@ const entryPoint = document.querySelector(".carousel-container");
 const caro = constructor();
 // entryPoint.append(constructor());
 entryPoint.appendChild(caro);
-
 
